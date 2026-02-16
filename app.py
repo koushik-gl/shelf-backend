@@ -4,6 +4,10 @@ import sqlite3
 
 app = Flask(__name__)
 CORS(app)
+@app.route("/")
+def home():
+    return jsonify({"message": "Lumina Backend Running"})
+
 
 def init_db():
     conn = sqlite3.connect("library.db")
